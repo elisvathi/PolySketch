@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FBFB2B76-4EAA-4182-BDEE-4534B6C0031E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PolySketch</RootNamespace>
+    <AssemblyName>PolySketch</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile44</TargetFrameworkProfile>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Drawing\Brushes\Abstractbrush.cs" />
+    <Compile Include="Drawing\Brushes\CustomBrush.cs" />
+    <Compile Include="Drawing\Brushes\Eraser.cs" />
+    <Compile Include="Drawing\Brushes\Interfaces\IBrush.cs" />
+    <Compile Include="Drawing\Brushes\Interfaces\ISpritePainter.cs" />
+    <Compile Include="Drawing\Services\CocosRenderer.cs" />
+    <Compile Include="Drawing\Services\DrawingConfigService.cs" />
+    <Compile Include="Drawing\Services\IRenderer.cs" />
+    <Compile Include="Drawing\Sprites\GradientBrush.cs" />
+    <Compile Include="Drawing\Sprites\PSprite.cs" />
+    <Compile Include="Drawing\Tools\Interfaces\ICompoundable.cs" />
+    <Compile Include="Drawing\Tools\Interfaces\IInitializableTool.cs" />
+    <Compile Include="Drawing\Tools\Interfaces\IMultilineTool.cs" />
+    <Compile Include="Drawing\Tools\Interfaces\IRulable.cs" />
+    <Compile Include="Drawing\Tools\Interfaces\IUpdatable.cs" />
+    <Compile Include="Drawing\Brushes\Pencil.cs" />
+    <Compile Include="Drawing\Brushes\RealisticBrush.cs" />
+    <Compile Include="Drawing\Brushes\StandartBrush.cs" />
+    <Compile Include="Drawing\Brushes\TechnicalBrush.cs" />
+    <Compile Include="Drawing\Services\DrawingService.cs" />
+    <Compile Include="Drawing\Services\DrawingToolsManager.cs" />
+    <Compile Include="Drawing\Rulers\AbstractRuler.cs" />
+    <Compile Include="Drawing\Rulers\Interfaces\IRuler.cs" />
+    <Compile Include="Drawing\Rulers\NoRuler.cs" />
+    <Compile Include="Drawing\Rulers\OnePointPerspectiveRuler.cs" />
+    <Compile Include="Drawing\Rulers\ParallelRuler.cs" />
+    <Compile Include="Drawing\Rulers\PerspectiveRuler.cs" />
+    <Compile Include="Drawing\Rulers\StandartRuler.cs" />
+    <Compile Include="Drawing\Rulers\ThreePointPerspectiveRuler.cs" />
+    <Compile Include="Drawing\Rulers\TwoPointPerspectiveRuler.cs" />
+    <Compile Include="Drawing\Tools\AbstractTool.cs" />
+    <Compile Include="Drawing\Tools\Interfaces\ITool.cs" />
+    <Compile Include="Drawing\Tools\MultiLine.cs" />
+    <Compile Include="Drawing\Tools\PolygonTool.cs" />
+    <Compile Include="Drawing\Tools\PolyLine.cs" />
+    <Compile Include="Drawing\Tools\SimpleArc.cs" />
+    <Compile Include="Drawing\Tools\SimpleCircle.cs" />
+    <Compile Include="Drawing\Tools\SimpleLine.cs" />
+    <Compile Include="Drawing\Tools\Spline.cs" />
+    <Compile Include="Geometry\Arc.cs" />
+    <Compile Include="Geometry\Circle.cs" />
+    <Compile Include="Geometry\Curve.cs" />
+    <Compile Include="Geometry\Extensions.cs" />
+    <Compile Include="Geometry\Interfaces\ICompoundGeometry.cs" />
+    <Compile Include="Geometry\Interfaces\IDividable.cs" />
+    <Compile Include="Geometry\Interfaces\IExtendableGeometry.cs" />
+    <Compile Include="Geometry\Interfaces\IExtendLimiter.cs" />
+    <Compile Include="Geometry\Interfaces\IGeometry.cs" />
+    <Compile Include="Geometry\Interfaces\IMovable.cs" />
+    <Compile Include="Geometry\Interfaces\IMultiSegment.cs" />
+    <Compile Include="Geometry\Interfaces\IOffsetable.cs" />
+    <Compile Include="Geometry\Interfaces\IRotatable.cs" />
+    <Compile Include="Geometry\Interfaces\IRulerFlagged.cs" />
+    <Compile Include="Geometry\Interfaces\IScalable.cs" />
+    <Compile Include="Geometry\Line.cs" />
+    <Compile Include="Geometry\Polygon.cs" />
+    <Compile Include="Geometry\PVector.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Helpers\HSVColor.cs" />
+    <Compile Include="Helpers\HSVtoRGB.cs" />
+    <Compile Include="Helpers\PDoubleTouch.cs" />
+    <Compile Include="Helpers\PImage.cs" />
+    <Compile Include="Helpers\PTouch.cs" />
+    <Compile Include="Layering\Layer.cs" />
+    <Compile Include="Layering\LayerManager.cs" />
+    <Compile Include="Layering\RenderNode\CocosDrawRenderNode.cs" />
+    <Compile Include="Layering\RenderNode\CocosLayerRenderNode.cs" />
+    <Compile Include="Layering\RenderNode\IDrawableRenderNode.cs" />
+    <Compile Include="Layering\RenderNode\IRenderNode.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NinjectModules\GlobalModule.cs" />
+    <Compile Include="NinjectModules\Kernels\KernelService.cs" />
+    <Compile Include="NinjectModules\LocalModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Canvas\CanvasCamera.cs" />
+    <Compile Include="UI\Canvas\CocosCanvasLayerContainer.cs" />
+    <Compile Include="UI\Canvas\CocosCanvasScene.cs" />
+    <Compile Include="UI\Canvas\CocosFormsView.cs" />
+    <Compile Include="UI\Canvas\CocosXamarinFormsView.cs" />
+    <Compile Include="UI\Canvas\Interfaces\ICanvasFormsView.cs" />
+    <Compile Include="UI\Canvas\Interfaces\ICanvasLayerContainer.cs" />
+    <Compile Include="UI\Canvas\Interfaces\IPaintCanvasScene.cs" />
+    <Compile Include="UI\Canvas\Interfaces\IXamarinFormsView.cs" />
+    <Compile Include="UI\Canvas\Interfaces\TouchDelegates.cs" />
+    <Compile Include="UI\Canvas\MainLayer.cs" />
+    <Compile Include="UI\ControlHandlers\BrushControlHandler.cs" />
+    <Compile Include="UI\ControlHandlers\RulerControlHandler.cs" />
+    <Compile Include="UI\ControlHandlers\ToolControlHandler.cs" />
+    <Compile Include="UI\CustomControls\ColorWheel.cs" />
+    <Compile Include="UI\CustomControls\ColorWheelCocos.cs" />
+    <Compile Include="UI\CustomControls\ColorWheelComponents\ColorChangedEventDispatcher.cs" />
+    <Compile Include="UI\CustomControls\ColorWheelComponents\HueCircle.cs" />
+    <Compile Include="UI\CustomControls\ColorWheelComponents\HueSlider.cs" />
+    <Compile Include="UI\CustomControls\ColorWheelComponents\SaturationBar.cs" />
+    <Compile Include="UI\CustomControls\ColorWheelComponents\ValueBar.cs" />
+    <Compile Include="UI\CustomControls\ColorWheelComponents\SaturationSlider.cs" />
+    <Compile Include="UI\CustomControls\ColorWheelComponents\ValueSlider.cs" />
+    <Compile Include="UI\CustomControls\RoundSlider.cs" />
+    <Compile Include="UI\MainUI\CanvasWrapperPage.cs" />
+    <Compile Include="UI\MainUI\MainCanvasPage.cs" />
+    <Compile Include="UI\MainUI\MainMenu.cs" />
+    <Compile Include="UI\Tests\AnimationTest.cs" />
+    <Compile Include="UI\Tests\CocosMasterDetail.cs" />
+    <Compile Include="UI\Tests\GameScene.cs" />
+    <Compile Include="UI\Tests\MenuTests\KernelSevice.cs" />
+    <Compile Include="UI\Tests\MenuTests\MenuListData.cs" />
+    <Compile Include="UI\Tests\MenuTests\MenuListView.cs" />
+    <Compile Include="UI\Tests\MenuTests\MenuPage.cs" />
+    <Compile Include="UI\Tests\TestCanvasPage.cs" />
+    <Compile Include="UI\Tests\TestClassCounter.cs" />
+    <Compile Include="UI\Tests\TestCocosPage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="box2d, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CocosSharp.1.7.1.0\lib\portable-net45+win+wpa81+wp81\box2d.dll</HintPath>
+    </Reference>
+    <Reference Include="CocosSharp, Version=1.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CocosSharp.1.7.1.0\lib\portable-net45+win+wpa81+wp81\CocosSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CocosSharp.Forms, Version=1.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CocosSharp.Forms.1.7.1.0\lib\portable-net45+win+wpa81+wp81\CocosSharp.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v7.1\Mono.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CocosSharp.1.7.1.0\lib\portable-net45+win+wpa81+wp81\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Portable.Ninject.3.3.1\lib\portable-net4+sl5+wp8+win8+wpa81+monotouch+monoandroid+Xamarin.iOS\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.224\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.224\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.4.224\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.iOS">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\Xamarin.iOS\v1.0\Xamarin.iOS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets'))" />
+  </Target>
+</Project>
